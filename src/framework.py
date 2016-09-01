@@ -28,6 +28,10 @@ arch_modules = ""
 fedora_modules = ""
 openbsd_modules = ""
 
+# Global variables for terminal buffer calculations
+term_size = os.get_terminal_size()
+
+
 if check_kali() == "Kali":
     os_profile = "Kali"
 else:
