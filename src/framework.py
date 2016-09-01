@@ -125,8 +125,7 @@ def show_module():
                         if  avail_lines % tLineCnt == 0:
                             # Print and wait
                             print("\n")
-                            print("Press any key to continue or q to quit...")
-                            keyData = getch()
+                            keyData = input("Press any key to continue or q to quit...")
                             tLineCnt = 0
                     if keyData == "q" or keyData == "Q":
                         break
