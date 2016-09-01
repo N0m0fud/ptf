@@ -107,7 +107,7 @@ def show_module():
                     print(
                         "   " + filename_short + " " * temp_number + description)
     print("\n")
-           if 
+          
 
 # this is when a use <module> command is initiated
 def use_module(module, all_trigger):
