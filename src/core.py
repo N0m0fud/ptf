@@ -263,8 +263,13 @@ def exit_ptf():
 # if it can't find it, will default to manual install base
 def profile_os():
     # if we are running a debian variant
-    if os.path.isfile("/usr/bin/apt-get"):
-        return "DEBIAN"
+    # Changing this to support versioning
+    #if os.path.isfile("/usr/bin/apt-get"):
+    if os.path.isfile("/etc/debian_version"):
+        vFile = open("/etc/debian_version", "r")
+        fLine = vFile.readline()
+        vFile.close()
+        return "DEBIAN", fLine
     if os.path.isfile("/etc/arch-release"):
         return "ARCHLINUX"
     if os.path.isfile("/etc/fedora-release"):
@@ -274,18 +279,18 @@ def profile_os():
         vFile = open("/etc/centos-release", "r")
         fLine = vFile.readline()
         vFile.close()
-        return "CENTOS Version " + fLine
+        return "CENTOS", fLine
     # Add Red Hat support w/ version check
     if os.path.isfile("/etc/redhat-release"):
         vFile = open("/etc/redhat-release", "r")
         fLine = vFile.readline()
         vFile.close()
-        return "Red Hat Version " + fLine
+        return "REDHAT", fLine
     # will add support for more operating systems later
 
     # else use custom
     else:
-        return "CUSTOM"
+        return "CUSTOM", "Unknown"
 
 
 # standard log write out

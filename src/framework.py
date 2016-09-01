@@ -39,10 +39,11 @@ avail_cols = term_size.columns
 
 if check_kali() == "Kali":
     os_profile = "Kali"
+    os_version = "Unknown"
 else:
-    os_profile = profile_os()
+    os_profile, os_version = profile_os()
 print_status("Operating system detected as: " +
-             bcolors.BOLD + os_profile + bcolors.ENDC)
+             bcolors.BOLD + os_profile + " " + os_version + bcolors.ENDC)
 
 # Output info on terminal size
 print_status("Your Terminal Windows supports " + str(avail_lines) + " lines and " + str(avail_cols) + " columns!\n")
