@@ -27,10 +27,15 @@ readline.parse_and_bind("tab: complete")
 readline.set_completer(complete)
 # end tab completion
 
+# Check Python Version
+cur_maj_version = sys.version_info[0]
+cur_min_version = sys.version_info[1]
+
 # Global variables for terminal buffer calculations - requires python greater than 3.2
-term_size = os.get_terminal_size()
-avail_lines = term_size.lines
-avail_cols = term_size.columns
+if cur_maj_version == 3 & cur_min_version > 2:
+    term_size = os.get_terminal_size()
+    avail_lines = term_size.lines
+    avail_cols = term_size.columns
 
 # color scheme for core
 
