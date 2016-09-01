@@ -126,7 +126,7 @@ def show_module():
                             # Print and wait
                             print("\n")
                             print("Press any key to continue or q to quit...")
-                            keyData = sys.stdin.read(1)
+                            keyData = sys.stdin.readline()
                     if keyData == "q" or keyData == "Q":
                         break
     print("\n")
