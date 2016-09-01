@@ -119,7 +119,7 @@ def show_module():
                 if description != None:
                     temp_number = 53 - len(filename_short)
                     print(
-                        "   " + filename_short + " " * temp_number + description)
+                        "   " + filename_short + " " * temp_number + description + tLineCnt)
                     if cur_maj_version == 3 and cur_min_version > 2:
                         # Allow for paging
                         if tLineCnt % avail_lines == 0:
