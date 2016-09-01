@@ -9,6 +9,7 @@ import sys
 import readline
 import os
 import time
+from core import os
 
 # python 2 compatibility
 try: input = raw_input
