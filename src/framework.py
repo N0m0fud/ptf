@@ -126,7 +126,7 @@ def show_module():
                             # Print and wait
                             print("\n")
                             keyData = input("Press any key to continue or q to quit...")
-                            tLineCnt = 0
+                            
                     if keyData == "q" or keyData == "Q":
                         break
                     else:
