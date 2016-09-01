@@ -31,10 +31,7 @@ openbsd_modules = ""
 centos_modules = ""
 redhat_modules = ""
 
-# Global variables for terminal buffer calculations - requires python greater than 3.2
-term_size = os.get_terminal_size()
-avail_lines = term_size.lines
-avail_cols = term_size.columns
+
 
 
 if check_kali() == "Kali":
