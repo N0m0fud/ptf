@@ -269,6 +269,12 @@ def profile_os():
         fLine = vFile.readline()
         vFile.close()
         return "CENTOS Version " + fLine
+    # Add Red Hat support w/ version check
+    if os.path.isfile("/etc/redhat-release"):
+        vFile = open("/etc/redhat-release", "r")
+        fLine = vFile.readline()
+        vFile.close()
+        return "Red Hat Version " + fLine
     # will add support for more operating systems later
 
     # else use custom
