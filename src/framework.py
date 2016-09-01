@@ -45,7 +45,7 @@ print_status("Operating system detected as: " +
              bcolors.BOLD + os_profile + bcolors.ENDC)
 
 # Output info on terminal size
-print_status("Your Terminal Windows supports " + avail_lines + " lines and " + avail_cols + " columns!/n")
+print_status("Your Terminal Windows supports " + str(avail_lines) + " lines and " + str(avail_cols) + " columns!/n")
 
 # main intro here
 if profile_os() == "DEBIAN":
