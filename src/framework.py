@@ -120,15 +120,15 @@ def show_module():
                     temp_number = 53 - len(filename_short)
                     print(
                         "   " + filename_short + " " * temp_number + description)
-            if cur_maj_version == 3 and cur_min_version > 2:
-                # Allow for paging
-                if tLineCnt % avail_lines == 0:
-                    # Print and wait
-                    print("\n")
-                    print("Press any key to continue or q to quit...")
-                    keyData = sys.stdin.read(1)
-            if keyData == "q" or keyData == "Q":
-                break
+                if cur_maj_version == 3 and cur_min_version > 2:
+                    # Allow for paging
+                    if tLineCnt % avail_lines == 0:
+                        # Print and wait
+                        print("\n")
+                        print("Press any key to continue or q to quit...")
+                        keyData = sys.stdin.read(1)
+                if keyData == "q" or keyData == "Q":
+                    break
     print("\n")
    
 
