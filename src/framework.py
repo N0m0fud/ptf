@@ -33,6 +33,8 @@ redhat_modules = ""
 
 # Global variables for terminal buffer calculations - requires python greater than 3.2
 term_size = os.get_terminal_size()
+avail_lines = term_size.lines
+avail_cols = term_size.columns
 
 
 if check_kali() == "Kali":
@@ -99,6 +101,7 @@ def show_module():
     for path, subdirs, files in os.walk(modules_path):
         # Add logic here to allow for list paging. Use counter and divide by buffer rows. Pause when mod = 0
         tLineCnt = 0
+       
         for name in files:
             tLineCnt = tLineCnt + 1
             # join the structure

@@ -27,6 +27,11 @@ readline.parse_and_bind("tab: complete")
 readline.set_completer(complete)
 # end tab completion
 
+# Global variables for terminal buffer calculations - requires python greater than 3.2
+term_size = os.get_terminal_size()
+avail_lines = term_size.lines
+avail_cols = term_size.columns
+
 # color scheme for core
 
 
