@@ -96,7 +96,7 @@ def print_error(message):
         (str(message)) + (bcolors.ENDC))
 
 def set_title(title):
-	sys.stdout.write("\x1b]2;%s\x07" % title)
+    sys.stdout.write("\x1b]2;%s\x07" % title)
 
 # count all of the modules
 def count_modules():
@@ -141,7 +141,7 @@ l__j   l__j\_jl__j__jl___j___jl_____j  \_/\_/   \___/ l__j\_jl__j\_j
 """
 
 banner += bcolors.ENDC + """
-		     The"""
+             The"""
 banner += bcolors.BOLD + """ PenTesters """
 banner += bcolors.ENDC + """Framework\n\n"""
 
@@ -263,6 +263,12 @@ def profile_os():
         return "ARCHLINUX"
     if os.path.isfile("/etc/fedora-release"):
         return "FEDORA"
+    # Add CentOS support w/ version check
+    if os.path.isfile("/etc/centos-release"):
+        vFile = open("/etc/centos-release", r)
+        fLine = vFile.readline()
+        vFile.close()
+        return "CENTOS Version " + fLine
     # will add support for more operating systems later
 
     # else use custom
