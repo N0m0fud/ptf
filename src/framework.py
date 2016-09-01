@@ -9,7 +9,7 @@ import sys
 import readline
 import os
 import time
-from core import os
+
 
 # python 2 compatibility
 try: input = raw_input
@@ -28,8 +28,10 @@ deb_modules = ""
 arch_modules = ""
 fedora_modules = ""
 openbsd_modules = ""
+centos_modules = ""
+redhat_modules = ""
 
-# Global variables for terminal buffer calculations
+# Global variables for terminal buffer calculations - requires python greater than 3.2
 term_size = os.get_terminal_size()
 
 
@@ -44,6 +46,8 @@ print_status("Operating system detected as: " +
 if profile_os() == "DEBIAN":
     subprocess.Popen("sudo dpkg --add-architecture i386",
                      stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+
+# Here we will check the environment and validate the CentOS / Ret Had yum repos and install necessary including Python 3.4
 
 print_status("Welcome to PTF - where everything just works...Because.." +
              bcolors.BOLD + funny + bcolors.ENDC)
