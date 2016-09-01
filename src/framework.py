@@ -101,9 +101,8 @@ def show_module():
     print (
         "   modules/install_update_all                           This will install or update all tools with modules within PTF")
     for path, subdirs, files in os.walk(modules_path):
-        # Add logic here to allow for list paging. Use counter and divide by buffer rows. Pause when mod = 0
-        tLineCnt = 0
-       
+        # Add logic here to allow for list paging. Use counter and divide by buffer rows. Pause when mod = 0. Only supported by python 3.3 or newer
+        tLineCnt = 4   # Start 4 lines in     
         for name in files:
             tLineCnt = tLineCnt + 1
             # join the structure
@@ -120,8 +119,18 @@ def show_module():
                     temp_number = 53 - len(filename_short)
                     print(
                         "   " + filename_short + " " * temp_number + description)
+        if cur_maj_version == 3 and cur_min_version > 2:
+            # Allow for paging
+            if tLineCnt % avail_lines == 0:
+                # Print and wait
+                print("\n")
+                print("Press any key to continue or q to quit...")
+                keyData = sys.stdin.read(1)
+        if keyData == "q" or keyData == "Q":
+            break
     print("\n")
-          
+   
+
 
 # this is when a use <module> command is initiated
 def use_module(module, all_trigger):
