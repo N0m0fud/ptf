@@ -105,11 +105,11 @@ def show_module():
         tLineCnt = 4   # Start 4 lines in   
         keyData = ""  
         for name in files:
-            tLineCnt = tLineCnt + 1
             # join the structure
             filename = os.path.join(path, name)
             # strip un-needed files
             if not "__init__.py" in filename or not "install_update_all":
+                tLineCnt = tLineCnt + 1
                 # shorten it up a little bit
                 filename_short = filename.replace(os.getcwd() + "/", "")
                 filename_short = filename_short.replace(".py", "")
@@ -119,7 +119,7 @@ def show_module():
                 if description != None:
                     temp_number = 53 - len(filename_short)
                     print(
-                        "   " + filename_short + " " * temp_number + description + tLineCnt)
+                        "   " + filename_short + " " * temp_number + description)
                     if cur_maj_version == 3 and cur_min_version > 2:
                         # Allow for paging
                         if tLineCnt % avail_lines == 0:
