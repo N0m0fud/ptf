@@ -43,7 +43,7 @@ print_status("Operating system detected as: " +
              bcolors.BOLD + os_profile + " " + os_version + bcolors.ENDC)
 
 # Output info on terminal size if right version of Python
-if cur_maj_version == 3 & cur_min_version > 2:
+if cur_maj_version == 3 and cur_min_version > 2:
     print_status("Your Terminal Windows supports " + str(avail_lines) + " lines and " + str(avail_cols) + " columns!\n")
 
 # main intro here
