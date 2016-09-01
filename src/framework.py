@@ -126,10 +126,12 @@ def show_module():
                             # Print and wait
                             print("\n")
                             print("Press any key to continue or q to quit...")
-                            keyData = sys.stdin.readline()
+                            keyData = getch()
                             tLineCnt = 0
                     if keyData == "q" or keyData == "Q":
                         break
+                    else:
+                        continue
     print("\n")
    
 
