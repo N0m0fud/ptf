@@ -122,7 +122,7 @@ def show_module():
                         "   " + filename_short + " " * temp_number + description)
                     if cur_maj_version == 3 and cur_min_version > 2:
                         # Allow for paging
-                        if tLineCnt % avail_lines == 0:
+                        if  core.avail_lines % tLineCnt == 0:
                             # Print and wait
                             print("\n")
                             print("Press any key to continue or q to quit...")
