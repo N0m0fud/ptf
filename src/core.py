@@ -250,7 +250,7 @@ def show_help_menu():
 # exit message for PTF
 def exit_ptf():
     print_status("Exiting PTF - the easy pentest platform creation framework.")
-    set_title("Hack the Planet!")
+    set_title("Hack the Planet!")  
 
 
 # this is the main handler to check what distribution we are using
@@ -265,7 +265,7 @@ def profile_os():
         return "FEDORA"
     # Add CentOS support w/ version check
     if os.path.isfile("/etc/centos-release"):
-        vFile = open("/etc/centos-release", r)
+        vFile = open("/etc/centos-release", "r")
         fLine = vFile.readline()
         vFile.close()
         return "CENTOS Version " + fLine
