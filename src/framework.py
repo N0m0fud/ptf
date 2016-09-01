@@ -102,7 +102,8 @@ def show_module():
         "   modules/install_update_all                           This will install or update all tools with modules within PTF")
     for path, subdirs, files in os.walk(modules_path):
         # Add logic here to allow for list paging. Use counter and divide by buffer rows. Pause when mod = 0. Only supported by python 3.3 or newer
-        tLineCnt = 4   # Start 4 lines in     
+        tLineCnt = 4   # Start 4 lines in   
+        keyData = ""  
         for name in files:
             tLineCnt = tLineCnt + 1
             # join the structure
