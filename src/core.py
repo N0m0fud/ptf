@@ -32,7 +32,7 @@ cur_maj_version = sys.version_info[0]
 cur_min_version = sys.version_info[1]
 
 # Global variables for terminal buffer calculations - requires python greater than 3.2
-if cur_maj_version == 3 & cur_min_version > 2:
+if cur_maj_version == 3 and cur_min_version > 2:
     term_size = os.get_terminal_size()
     avail_lines = term_size.lines
     avail_cols = term_size.columns
