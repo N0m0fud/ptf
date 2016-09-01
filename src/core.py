@@ -10,6 +10,7 @@ import glob
 import platform
 import urllib
 import sys
+import console
 
 # tab completion
 def complete(text, state):

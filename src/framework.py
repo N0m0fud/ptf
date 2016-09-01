@@ -88,7 +88,10 @@ def show_module():
     print (
         "   modules/install_update_all                           This will install or update all tools with modules within PTF")
     for path, subdirs, files in os.walk(modules_path):
+        # Add logic here to allow for list paging. Use counter and divide by buffer rows. Pause when mod = 0
+        tLineCnt = 0
         for name in files:
+            tLineCnt = tLineCnt + 1
             # join the structure
             filename = os.path.join(path, name)
             # strip un-needed files
@@ -104,7 +107,7 @@ def show_module():
                     print(
                         "   " + filename_short + " " * temp_number + description)
     print("\n")
-
+           if 
 
 # this is when a use <module> command is initiated
 def use_module(module, all_trigger):
