@@ -271,9 +271,15 @@ def profile_os():
         vFile.close()
         return "DEBIAN", fLine
     if os.path.isfile("/etc/arch-release"):
-        return "ARCHLINUX"
+        vFile = open("/etc/arch-release", "r")
+        fLine = vFile.readline()
+        vFile.close()
+        return "ARCHLINUX", fLine
     if os.path.isfile("/etc/fedora-release"):
-        return "FEDORA"
+        vFile = open("/etc/fedora-release", "r")
+        fLine = vFile.readline()
+        vFile.close()
+        return "FEDORA", fLine
     # Add CentOS support w/ version check
     if os.path.isfile("/etc/centos-release"):
         vFile = open("/etc/centos-release", "r")
