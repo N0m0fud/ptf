@@ -42,10 +42,6 @@ else:
 print_status("Operating system detected as: " +
              bcolors.BOLD + os_profile + " " + os_version + bcolors.ENDC)
 
-# Output info on terminal size if right version of Python
-if cur_maj_version == 3 and cur_min_version > 2:
-    print_status("Your Terminal Windows supports " + str(avail_lines) + " lines and " + str(avail_cols) + " columns!\n")
-
 # main intro here
 if profile_os() == "DEBIAN":
     subprocess.Popen("sudo dpkg --add-architecture i386",
@@ -120,17 +116,7 @@ def show_module():
                     temp_number = 53 - len(filename_short)
                     print(
                         "   " + filename_short + " " * temp_number + description)
-                    if cur_maj_version == 3 and cur_min_version > 2:
-                        # Allow for paging
-                        if  avail_lines % tLineCnt == 0:
-                            # Print and wait
-                            print("\n")
-                            keyData = input("Press any key to continue or q to quit...")
-                            
-                    if keyData == "q" or keyData == "Q":
-                        break
-                    else:
-                        continue
+                   
     print("\n")
    
 
